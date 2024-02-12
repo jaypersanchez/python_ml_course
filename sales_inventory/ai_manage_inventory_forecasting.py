@@ -31,7 +31,7 @@ def visualize_months_until_stockout(stockout_estimates):
     plt.xlabel('Item ID')
     plt.ylabel('Months Until Stockout')
     plt.tight_layout()  # Adjust layout to make room for the rotated x-axis labels
-    plt.show()
+    plt.show(block=False)
 
 def visualize_stockout_probability_distribution(stockout_estimates):
     plt.figure(figsize=(8, 4))

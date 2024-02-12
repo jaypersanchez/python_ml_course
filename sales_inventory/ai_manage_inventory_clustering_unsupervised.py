@@ -7,10 +7,20 @@ Clustering aims to group a set of objects in such a way that objects in the
 same group (called a cluster) are more similar to each other than to those in other groups.
 """
 """
-Now, we decided to sort these toys into three smaller boxes based on their price tags and stickers, so toys that are kind of alike end up together:
-Box 0 (Big Price Tag Box): We put all the toys with big price tags here. These toys are quite expensive, like your big remote-controlled car, and they have a little sticker for a small discount. There are 30 toys in this box.
-Box 1 (Small Price Tag Box): This box is for toys with small price tags, like your tiny cars or small snack packets. They also have a little sticker for a small discount. We found 34 toys like this.
-Box 2 (Medium Price Tag Box): The toys with price tags that are not too big and not too small go here, like your medium-sized teddy bear. These toys also have a little discount sticker. There are 36 toys in this box.
+Now, we decided to sort these toys into three smaller boxes based on their price tags and 
+stickers, so toys that are kind of alike end up together:
+
+Box 0 (Big Price Tag Box): We put all the toys with big price tags here. 
+These toys are quite expensive, like your big remote-controlled car, 
+and they have a little sticker for a small discount. There are 30 toys in this box.
+
+Box 1 (Small Price Tag Box): This box is for toys with small price tags, 
+like your tiny cars or small snack packets. 
+They also have a little sticker for a small discount. We found 34 toys like this.
+
+Box 2 (Medium Price Tag Box): The toys with price tags that are not too big and not too 
+small go here, like your medium-sized teddy bear. 
+These toys also have a little discount sticker. There are 36 toys in this box.
 
 Each box has toys that are similar in how much they cost and how big their discount sticker is. We sorted them into boxes so it's easier to find what you're looking for when you play shop!
 

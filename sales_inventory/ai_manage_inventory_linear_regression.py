@@ -4,6 +4,9 @@ we'll first need to establish a relationship we're interested in analyzing.
 A common approach is to model how sales volume (dependent variable) changes in relation to 
 other factors such as price, discount rate, or time (independent variables).
 
+In simple words, linear regression is like drawing the best-balancing line 
+through a bunch of points to help us make good guesses based on the data we see.
+
 In this example, let's assume we're interested in understanding how the discount rate affects 
 sales volume for items. We'll perform a simple linear regression analysis to explore this relationship.
 This requires calculating the average sales volume for each discount rate across all items, 
