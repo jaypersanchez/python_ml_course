@@ -50,6 +50,7 @@ if __name__ == "__main__":
 
     # Merge sales records with inventory data
     merged_data = merge_sales_and_inventory(sales_records_data, sales_inventory_data)
+    print(merged_data)
 
     # Calculate average sales volume by discount rate
     avg_sales_by_discount = calculate_average_sales_by_discount(merged_data)

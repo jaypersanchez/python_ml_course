@@ -23,6 +23,7 @@ def estimate_stockout_probability(inventory_data, sales_data, months_ahead=3):
     df_analysis['Probability_Stockout_3Months'] = df_analysis['Months_Until_Stockout'].apply(lambda x: 1 if x <= months_ahead else 0)
     return df_analysis[['Item_ID', 'Months_Until_Stockout', 'Probability_Stockout_3Months']]
 
+# Estimated number of months before an item is out
 def visualize_months_until_stockout(stockout_estimates):
     plt.figure(figsize=(12, 6))
     sns.barplot(x='Item_ID', y='Months_Until_Stockout', data=stockout_estimates)
@@ -33,6 +34,7 @@ def visualize_months_until_stockout(stockout_estimates):
     plt.tight_layout()  # Adjust layout to make room for the rotated x-axis labels
     plt.show(block=False)
 
+# Probability of a stock running out in the next three months
 def visualize_stockout_probability_distribution(stockout_estimates):
     plt.figure(figsize=(8, 4))
     sns.countplot(x='Probability_Stockout_3Months', data=stockout_estimates)
