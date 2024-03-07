@@ -1,42 +1,37 @@
 ## Beginner Creating and View Data
 import pandas as pd
 
-# Create a DataFrame
-df = pd.DataFrame({
-    'Name': ['Alice', 'Bob', 'Charlie'],
-    'Age': [25, 30, 35],
-    'City': ['New York', 'Paris', 'London']
-})
+print(f'Panda version {pd.__version__}')
 
-# View the DataFrame
+df = pd.read_csv('./data/sol_exchange_data_yearly.csv')
 print(df)
 
-## Intermediate data cleaning
-# Handling missing values
-df.fillna(value=0, inplace=True)
+# Locate Row
+print(df.loc[[1]])
 
-# Convert data types
-df['Age'] = df['Age'].astype(int)
+myvar = pd.Series(df['open_price'].values[4], index=["w","x", "y", "z"])
+print(myvar)
 
-## Advanced Data Manipulation
-# Grouping and aggregating
-grouped = df.groupby('City').agg({'Age': ['mean', 'min', 'max']})
+# Count NaN values before dropping to verify
+def countNanValueCells(df):
+    # Assuming 'df' is your DataFrame
+    
+    # Count NaN values after dropping to verify
+    nan_count_after = df.isna().sum().sum()
 
-# Merging DataFrames
-df2 = pd.DataFrame({
-    'City': ['New York', 'Paris'],
-    'Population': [8800000, 2141000]
-})
-merged_df = pd.merge(df, df2, on='City')
+    # Calculate the number of dropped NaN values
+    nan_dropped = nan_count_before - nan_count_after
 
-## Time Series Analysis
-# Convert a column to datetime
-df['Date'] = pd.to_datetime(df['Date'])
+    print(f"Number of NaN values before dropping: {nan_count_before}")
+    print(f"Number of NaN values after dropping: {nan_count_after}")
+    print(f"Number of NaN values dropped: {nan_dropped}")
+    
+# remove rows empty cells
+nan_count_before = df.isna().sum().sum() # Count NaN values before dropping
+df = df.dropna() # then remove cell
+countNanValueCells(df)
 
-# Resample time series data
-resampled_data = df.resample('M', on='Date').mean()
 
-## Visualization 
-# Requires matplotlib
-df.plot(kind='bar', x='Name', y='Age')
+
+
 
