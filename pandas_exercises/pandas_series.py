@@ -14,15 +14,18 @@ print("\nSeries with custom index:\n", series)
 # Access element at index 'b'
 print("Element at index 'b':", series['b'])
 
+# Task 2
 # Slice the Series from 'b' to 'c'
 print("\nSeries from 'b' to 'c':\n", series['b':'c'])
 
+# Task 3
 # Multiply Series by 2 will require numpy
 print("Series * 2:\n", series * 2)
 
 # Exponential of Series
 print("\nExponential of Series:\n", np.exp(series))
 
+# Task 4
 # Create a Series with missing data
 data_with_missing = [4, np.nan, -5, None]
 series_missing = pd.Series(data_with_missing)
