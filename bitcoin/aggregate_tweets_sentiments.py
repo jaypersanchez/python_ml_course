@@ -1,5 +1,6 @@
 import json
 from textblob import TextBlob
+import matplotlib.pyplot as plt
 
 # Load tweets from the JSON file
 with open('data/cleaned_bitcoin_tweets.json', 'r') as file:
@@ -32,3 +33,16 @@ for tweet in tweets:
 
 # Print the counts to the console
 print(f"Positive: {positive_count}, Neutral: {neutral_count}, Negative: {negative_count}")
+
+# Data to plot
+labels = 'Positive', 'Neutral', 'Negative'
+sizes = [positive_count, neutral_count, negative_count]
+colors = ['lightgreen', 'gold', 'lightcoral']
+explode = (0.1, 0, 0)  # explode 1st slice
+
+# Plot
+plt.figure(figsize=(8, 6))
+plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140)
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.title('Sentiment Analysis of Bitcoin Tweets')
+plt.show()
