@@ -11,17 +11,15 @@ index_labels = ['d', 'b', 'a', 'c']
 series.index = index_labels
 print("\nSeries with custom index:\n", series)
 
+# Task 2 - Series Slices
 # Access element at index 'b'
 print("Element at index 'b':", series['b'])
-
-# Task 2
 # Slice the Series from 'b' to 'c'
 print("\nSeries from 'b' to 'c':\n", series['b':'c'])
 
-# Task 3
+# Task 3 natural logarithms 2.71828 natural number 
 # Multiply Series by 2 will require numpy
 print("Series * 2:\n", series * 2)
-
 # Exponential of Series
 print("\nExponential of Series:\n", np.exp(series))
 
