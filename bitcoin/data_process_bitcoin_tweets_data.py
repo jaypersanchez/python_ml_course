@@ -11,14 +11,14 @@ def clean_tweet(tweet):
     return tweet.strip()
 
 # Load the dataset
-with open('bitcoin_tweets.json', 'r', encoding='utf-8') as file:
+with open('data/bitcoin_tweets.json', 'r', encoding='utf-8') as file:
     tweets = json.load(file)
 
 # Clean the tweets
 cleaned_tweets = [clean_tweet(tweet) for tweet in tweets]
 
 # Save the cleaned tweets to a new JSON file
-with open('cleaned_bitcoin_tweets.json', 'w', encoding='utf-8') as file:
+with open('data/cleaned_bitcoin_tweets.json', 'w', encoding='utf-8') as file:
     json.dump(cleaned_tweets, file, indent=4)
 
 print("Cleaned tweets have been saved to cleaned_bitcoin_tweets.json")
