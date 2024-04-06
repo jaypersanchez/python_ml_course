@@ -1,9 +1,19 @@
+'''
+This is an inventory optimization data analytics.  
+By calculating metrics such as Economic Order Quantity (EOQ), 
+Safety Stock, 
+and Reorder Points based on historical demand (Monthly_Demand), 
+the code provides insights into the current inventory status and operations. T
+his aspect of analytics helps businesses understand how much inventory needs to be 
+maintained and when reordering should occur to prevent stockouts or overstock situations.
+'''
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 
+# TASK 1
 # Load data from JSON file
 def load_json_data(filepath):
     return pd.read_json(filepath)
@@ -21,6 +31,7 @@ holding_cost_per_unit = 2  # Holding cost per unit per year (assumed constant fo
 lead_time_days = 30  # Lead time to receive an order in days (assumed constant for demonstration)
 service_level = 0.95  # Service level for safety stock calculation (Z-score ~1.645 for 95% service level)
 
+# TASK 2
 # Calculate EOQ (Economic Order Quantity)
 inventory_data['EOQ'] = np.sqrt((2 * inventory_data['Monthly_Demand'] * order_cost * 12) / holding_cost_per_unit)
 
@@ -34,6 +45,7 @@ inventory_data['Reorder_Point'] = (inventory_data['Monthly_Demand'] / 30 * lead_
 print("Inventory Optimization Analysis:")
 print(inventory_data[['Item_ID', 'EOQ', 'Safety_Stock', 'Reorder_Point']])
 
+# TASK 3
 # Set the seaborn style for the plots
 sns.set(style="whitegrid")
 
